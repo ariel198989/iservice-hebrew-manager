@@ -99,24 +99,24 @@ export function SettingsManager() {
   return (
     <div className="space-y-8 fade-in-up">
       {/* Header */}
-      <div className="flex items-center justify-between slide-in-right">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 slide-in-right">
         <div>
-          <h1 className="text-4xl font-bold gradient-text mb-2">הגדרות מערכת</h1>
-          <p className="text-muted-foreground text-lg">נהל הגדרות החברה, התראות ומערכת</p>
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold gradient-text mb-2">הגדרות מערכת</h1>
+          <p className="text-muted-foreground text-sm sm:text-base lg:text-lg">נהל הגדרות החברה, התראות ומערכת</p>
         </div>
         <Button 
           onClick={handleSave}
           disabled={isSaving}
-          className="btn-hover-scale premium-card px-6 py-3 text-base font-medium"
+          className="btn-hover-scale premium-card px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium w-full sm:w-auto"
         >
           {isSaving ? (
             <>
-              <Clock className="h-5 w-5 ml-2 animate-spin" />
+              <Clock className="h-4 w-4 sm:h-5 sm:w-5 ml-2 animate-spin" />
               שומר...
             </>
           ) : (
             <>
-              <Save className="h-5 w-5 ml-2" />
+              <Save className="h-4 w-4 sm:h-5 sm:w-5 ml-2" />
               שמור הגדרות
             </>
           )}

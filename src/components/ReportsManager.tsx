@@ -98,14 +98,14 @@ export function ReportsManager() {
   return (
     <div className="space-y-8 fade-in-up">
       {/* Header */}
-      <div className="flex items-center justify-between slide-in-right">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 slide-in-right">
         <div>
-          <h1 className="text-4xl font-bold gradient-text mb-2">דוחות ואנליטיקה</h1>
-          <p className="text-muted-foreground text-lg">תובנות עסקיות וניתוח ביצועים</p>
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold gradient-text mb-2">דוחות ואנליטיקה</h1>
+          <p className="text-muted-foreground text-sm sm:text-base lg:text-lg">תובנות עסקיות וניתוח ביצועים</p>
         </div>
-        <div className="flex gap-3">
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full sm:w-auto">
           <Select value={selectedPeriod} onValueChange={setSelectedPeriod}>
-            <SelectTrigger className="w-40 premium-card">
+            <SelectTrigger className="w-full sm:w-40 premium-card">
               <SelectValue placeholder="בחר תקופה" />
             </SelectTrigger>
             <SelectContent>
@@ -114,15 +114,15 @@ export function ReportsManager() {
               <SelectItem value="12months">12 חודשים</SelectItem>
             </SelectContent>
           </Select>
-          <Button className="btn-hover-scale premium-card px-6 py-3 text-base font-medium">
-            <Download className="h-5 w-5 ml-2" />
+          <Button className="btn-hover-scale premium-card px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium">
+            <Download className="h-4 w-4 sm:h-5 sm:w-5 ml-2" />
             ייצא דוח
           </Button>
         </div>
       </div>
 
       {/* Key Metrics */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         <Card className="premium-card slide-in-left">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
@@ -226,7 +226,7 @@ export function ReportsManager() {
       </Card>
 
       {/* Charts Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
         {/* Hours and Service Calls Chart */}
         <Card className="premium-card slide-in-left">
           <CardHeader>
@@ -288,7 +288,7 @@ export function ReportsManager() {
       </div>
 
       {/* Service Call Status and Client Revenue Tables */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
         {/* Service Call Status */}
         <Card className="premium-card slide-in-left">
           <CardHeader>

@@ -41,10 +41,10 @@ export function Sidebar({ onClose, activeView, onViewChange }: SidebarProps) {
 
   return (
     <div className="h-full glass-sidebar slide-in-right">
-      <div className="flex items-center justify-between p-6 border-b border-sidebar-border/50">
+      <div className="flex items-center justify-between p-4 sm:p-6 border-b border-sidebar-border/50">
         <div className="fade-in-up">
-          <h1 className="text-2xl font-bold text-white mb-1">מערכת ניהול שירות</h1>
-          <p className="text-sm text-sidebar-foreground/80">ניהול לקוחות ותמיכה מתקדם</p>
+          <h1 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-1">מערכת ניהול שירות</h1>
+          <p className="text-xs sm:text-sm text-sidebar-foreground/80">ניהול לקוחות ותמיכה מתקדם</p>
         </div>
         {onClose && (
           <Button
@@ -68,19 +68,19 @@ export function Sidebar({ onClose, activeView, onViewChange }: SidebarProps) {
               key={item.id}
               variant="ghost"
               className={cn(
-                "w-full justify-start gap-4 text-sidebar-foreground hover:bg-sidebar-accent/30 rounded-xl py-3 px-4 transition-all duration-300 modern-sidebar-item stagger-fade-in",
+                "w-full justify-start gap-3 sm:gap-4 text-sidebar-foreground hover:bg-sidebar-accent/30 rounded-xl py-2 sm:py-3 px-3 sm:px-4 transition-all duration-300 modern-sidebar-item stagger-fade-in",
                 isActive && "bg-sidebar-accent/50 text-white shadow-lg transform scale-105"
               )}
               onClick={() => onViewChange(item.id)}
               style={{animationDelay: `${index * 0.1}s`}}
             >
               <div className="relative">
-                <Icon className="h-5 w-5" />
+                <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
                 {isActive && (
                   <div className="absolute -inset-2 bg-white/20 rounded-full -z-10 animate-pulse"></div>
                 )}
               </div>
-              <span className="text-sm font-medium">{item.label}</span>
+              <span className="text-xs sm:text-sm font-medium">{item.label}</span>
               {isActive && (
                 <div className="absolute left-0 top-0 bottom-0 w-1 bg-white rounded-r-full"></div>
               )}

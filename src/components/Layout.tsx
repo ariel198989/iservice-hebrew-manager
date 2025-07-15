@@ -41,7 +41,7 @@ export function Layout({ children, activeView, onViewChange }: LayoutProps) {
                 <Menu className="h-5 w-5" />
               </Button>
               
-              <div className="modern-search">
+              <div className="modern-search hidden sm:block">
                 <Search className="absolute right-3 top-3 h-4 w-4 text-muted-foreground" />
                 <Input
                   placeholder="חיפוש..."
@@ -50,16 +50,16 @@ export function Layout({ children, activeView, onViewChange }: LayoutProps) {
               </div>
             </div>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 sm:gap-4">
               <Button variant="ghost" size="sm" className="premium-card relative">
                 <Bell className="h-5 w-5" />
                 <div className="notification-badge">3</div>
               </Button>
-              <div className="flex items-center gap-3 premium-card px-4 py-2 rounded-xl">
+              <div className="flex items-center gap-2 sm:gap-3 premium-card px-2 sm:px-4 py-2 rounded-xl">
                 <Button variant="ghost" size="sm" className="rounded-full">
                   <User className="h-5 w-5" />
                 </Button>
-                <div className="text-sm">
+                <div className="text-sm hidden sm:block">
                   <p className="font-semibold">טכנאי מערכת</p>
                   <p className="text-muted-foreground text-xs">אדמין</p>
                 </div>
@@ -70,7 +70,7 @@ export function Layout({ children, activeView, onViewChange }: LayoutProps) {
 
         {/* Main content area */}
         <main className="flex-1 overflow-auto bg-gradient-to-br from-gray-50 to-blue-50/30">
-          <div className="container mx-auto px-6 py-8 rtl-fade-in">
+          <div className="container mx-auto px-4 sm:px-6 py-4 sm:py-8 rtl-fade-in">
             {children}
           </div>
         </main>

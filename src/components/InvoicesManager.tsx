@@ -177,19 +177,19 @@ export function InvoicesManager() {
   return (
     <div className="space-y-8 fade-in-up">
       {/* Header */}
-      <div className="flex items-center justify-between slide-in-right">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 slide-in-right">
         <div>
-          <h1 className="text-4xl font-bold gradient-text mb-2">ניהול חשבוניות</h1>
-          <p className="text-muted-foreground text-lg">נהל חשבוניות, מעקב תשלומים וחיובים</p>
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold gradient-text mb-2">ניהול חשבוניות</h1>
+          <p className="text-muted-foreground text-sm sm:text-base lg:text-lg">נהל חשבוניות, מעקב תשלומים וחיובים</p>
         </div>
-        <Button className="btn-hover-scale premium-card px-6 py-3 text-base font-medium">
-          <Plus className="h-5 w-5 ml-2" />
+        <Button className="btn-hover-scale premium-card px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium w-full sm:w-auto">
+          <Plus className="h-4 w-4 sm:h-5 sm:w-5 ml-2" />
           חשבונית חדשה
         </Button>
       </div>
 
       {/* Statistics Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         <Card className="premium-card slide-in-left">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
@@ -311,7 +311,7 @@ export function InvoicesManager() {
       </Card>
 
       {/* Invoices List */}
-      <div className="space-y-6">
+      <div className="space-y-4 sm:space-y-6">
         {filteredInvoices.map((invoice, index) => (
           <Card key={invoice.id} className="interactive-card group stagger-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
             <CardContent className="p-6">

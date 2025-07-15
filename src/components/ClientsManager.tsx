@@ -88,21 +88,21 @@ export function ClientsManager() {
   return (
     <div className="space-y-8 fade-in-up">
       {/* Header */}
-      <div className="flex items-center justify-between slide-in-right">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 slide-in-right">
         <div>
-          <h1 className="text-4xl font-bold gradient-text mb-2">ניהול לקוחות</h1>
-          <p className="text-muted-foreground text-lg">נהל את כל הלקוחות והפרטים שלהם</p>
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold gradient-text mb-2">ניהול לקוחות</h1>
+          <p className="text-muted-foreground text-sm sm:text-base lg:text-lg">נהל את כל הלקוחות והפרטים שלהם</p>
         </div>
-        <Button className="btn-hover-scale premium-card px-6 py-3 text-base font-medium">
-          <Plus className="h-5 w-5 ml-2" />
+        <Button className="btn-hover-scale premium-card px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium w-full sm:w-auto">
+          <Plus className="h-4 w-4 sm:h-5 sm:w-5 ml-2" />
           לקוח חדש
         </Button>
       </div>
 
       {/* Filters */}
       <Card className="premium-card slide-in-left">
-        <CardContent className="p-6">
-          <div className="flex flex-col md:flex-row gap-4">
+        <CardContent className="p-4 sm:p-6">
+          <div className="flex flex-col gap-4">
             <div className="flex-1 modern-search">
               <Search className="absolute right-3 top-3 h-4 w-4 text-muted-foreground" />
               <Input
@@ -112,12 +112,12 @@ export function ClientsManager() {
                 className="pr-10 border-0 bg-transparent focus:ring-0 placeholder:text-muted-foreground/70"
               />
             </div>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
               <Button
                 variant={selectedType === 'all' ? 'default' : 'outline'}
                 onClick={() => setSelectedType('all')}
                 size="sm"
-                className="premium-card"
+                className="premium-card text-xs sm:text-sm"
               >
                 כל הלקוחות
               </Button>
@@ -125,7 +125,7 @@ export function ClientsManager() {
                 variant={selectedType === 'retainer' ? 'default' : 'outline'}
                 onClick={() => setSelectedType('retainer')}
                 size="sm"
-                className="premium-card"
+                className="premium-card text-xs sm:text-sm"
               >
                 ריטיינר
               </Button>
@@ -133,7 +133,7 @@ export function ClientsManager() {
                 variant={selectedType === 'hour_bank' ? 'default' : 'outline'}
                 onClick={() => setSelectedType('hour_bank')}
                 size="sm"
-                className="premium-card"
+                className="premium-card text-xs sm:text-sm"
               >
                 בנק שעות
               </Button>
@@ -141,7 +141,7 @@ export function ClientsManager() {
                 variant={selectedType === 'hourly' ? 'default' : 'outline'}
                 onClick={() => setSelectedType('hourly')}
                 size="sm"
-                className="premium-card"
+                className="premium-card text-xs sm:text-sm"
               >
                 שעתי
               </Button>
@@ -151,7 +151,7 @@ export function ClientsManager() {
       </Card>
 
       {/* Clients Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
         {filteredClients.map((client, index) => (
           <Card key={client.id} className="interactive-card group stagger-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
             <CardHeader className="pb-4">
