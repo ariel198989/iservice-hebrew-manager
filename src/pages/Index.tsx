@@ -3,6 +3,11 @@ import { Layout } from '@/components/Layout';
 import { Dashboard } from '@/components/Dashboard';
 import { ClientsManager } from '@/components/ClientsManager';
 import { ServiceCallsManager } from '@/components/ServiceCallsManager';
+import { HourBanksManager } from '@/components/HourBanksManager';
+import { EquipmentManager } from '@/components/EquipmentManager';
+import { ReportsManager } from '@/components/ReportsManager';
+import { InvoicesManager } from '@/components/InvoicesManager';
+import { SettingsManager } from '@/components/SettingsManager';
 
 const Index = () => {
   const [activeView, setActiveView] = useState('dashboard');
@@ -16,15 +21,15 @@ const Index = () => {
       case 'service-calls':
         return <ServiceCallsManager />;
       case 'hour-banks':
-        return <div className="text-center p-12 text-muted-foreground">מודול בנקי שעות בבנייה...</div>;
+        return <HourBanksManager />;
       case 'equipment':
-        return <div className="text-center p-12 text-muted-foreground">מודול ציוד וספקים בבנייה...</div>;
+        return <EquipmentManager />;
       case 'reports':
-        return <div className="text-center p-12 text-muted-foreground">מודול דוחות בבנייה...</div>;
+        return <ReportsManager />;
       case 'invoices':
-        return <div className="text-center p-12 text-muted-foreground">מודול חשבוניות בבנייה...</div>;
+        return <InvoicesManager />;
       case 'settings':
-        return <div className="text-center p-12 text-muted-foreground">מודול הגדרות בבנייה...</div>;
+        return <SettingsManager />;
       default:
         return <Dashboard />;
     }
